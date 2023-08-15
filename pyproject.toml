@@ -1,0 +1,48 @@
+[project]
+name = "super_prompt"
+authors = [
+    {name = "Jacky Chen", email = "jacky9813@hotmail.com"}
+]
+description = "Enhance the prompt message of the shell."
+readme = "README.rst"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: User Interfaces",
+    "Topic :: Terminals",
+    "Topic :: Utilities"
+]
+dependencies = [
+    "importlib-metadata; python_version<'3.10'",
+    "tabulate>=0.9.0",
+    "mergedeep>=1.3.4",
+    "toml>=0.10.2"
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+
+[project.scripts]
+super-prompt = "super_prompt.main:main"
+
+[build-system]
+requires = ["setuptools >= 65.0", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-dir]
+super_prompt = "super_prompt"
+
+
+[tool.setuptools.dynamic]
+version = {attr = "super_prompt.VERSION.VERSION"}
