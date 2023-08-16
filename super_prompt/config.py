@@ -124,7 +124,10 @@ def configure_subparser(
                             )()
                         ]) or "No config options"
                     ]
-                    for entrypoint in plugin_list.values()
+                    for entrypoint in sorted(
+                        plugin_list.values(),
+                        key=lambda ep: ep.name
+                    )
                 ],
                 [
                     "Enabled",
