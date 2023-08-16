@@ -53,10 +53,12 @@ Supported Plugins
 
 .. _Git Plugin: https://github.com/jacky9813/super_prompt_plugin_git
 .. _Google Cloud SDK Plugin: https://github.com/jacky9813/super_prompt_plugin_gcloud
+.. _kubectl Plugin: https://github.com/jacky9813/super_prompt_plugin_kubectl
 .. _Terraform Plugin: https://github.com/jacky9813/super_prompt_plugin_terraform
 
 - `Git Plugin`_
 - `Google Cloud SDK Plugin`_
+- `kubectl Plugin`_
 - `Terraform Plugin`_
 
 The plugin needs to be enable manually after installation:
