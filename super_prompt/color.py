@@ -28,4 +28,11 @@ def color(color_spec: typing.Optional[types.Color]) -> str:
         return ""
     if isinstance(color_spec, int):
         return ansi_color(color_spec)
-    return rgb_color(**color_spec)
+    if isinstance(color_spec, dict):
+        if len(color_spec.keys()) == 3 and all([
+            channel in color_spec
+            for channel in ["R", "G", "B"]
+        ]):
+            return rgb_color(**color_spec)
+        raise KeyError("A color dict must contain R, G and B only.")
+    return rgb_color(*color_spec)
